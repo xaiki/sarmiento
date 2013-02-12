@@ -3,7 +3,7 @@
 ##¿Qué es ésto?
 
 Esto es un intento de crear una API para operar con el sitio http://trenes.mininterior.gov.ar/arribos_sarmiento_.php.
-Por lo pronto, no es nada mas que la aplicacion lista, sin funciones ni nada similar.
+Hay una API muy básica ahora mismo.
 
 
 ##¿Cómo funciona?
@@ -17,12 +17,50 @@ tres son en el otro sentido (a Once).
 
 
 ##¿Qué necesito?
+
 	Node.js
 	request (https://github.com/mikeal/request)
 
 
+##¿Hay algún ejemplo?
+
+	var Horarios = require('./lib/horarios.js');
+	var horarios = Horarios();
+
+	horarios.actualizar(function(trenes) {
+		console.log(trenes.proximoMoreno('LINIERS'));
+		console.log(trenes.siguienteMoreno('LINIERS'));
+	});
+
+
+La funcion 'actualizar', es la función principal, ejecuta un callback que tiene como argumento un objeto que posee metodos 
+para pedir los proximos trenes especificando el nombre de la estación.
+
+###trenes.proximoMoreno('ESTACION')
+Trae el proximo tren a Moreno
+
+###trenes.siguienteMoreno('ESTACION')
+Trae el siguiente al próximo, en sentido Moreno
+
+###trenes.proximoOnce('ESTACION')
+Trae el próximo a Once
+
+###trenes.siguienteOnce('ESTACION')
+Trae el siguiente al proximo, en sentido Once
+
+
+##¿Cómo lo pruebo?
+
+	node app.js
+
+
 ##¿Cuál es la idea?
 
-Hacer una API prolija, no hardcodear código.
+Hacer una API prolija.
+
+No hardcodear código.
+
+Normalizar los nombres de las estaciones
+
 Ser feliz.
 
