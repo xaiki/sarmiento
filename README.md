@@ -57,10 +57,7 @@ Trae el siguiente al proximo, en sentido Once
 ##¿Cuál es la idea?
 
 Hacer una API prolija.
-
 No hardcodear código.
-
 Normalizar los nombres de las estaciones
-
 Ser feliz.
 
