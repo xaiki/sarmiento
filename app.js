@@ -9,6 +9,6 @@ horarios.actualizar(function(trenes) {
 	console.log(trenes.siguienteOnce('LINIERS'));
 
 	//Simple debug
-	console.log(trenes);
+	console.log(trenes.estaciones);
 
 });
