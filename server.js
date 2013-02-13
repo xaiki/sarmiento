@@ -1,8 +1,10 @@
 var express = require('express');
+var fs = require('fs');
 var app = express();
 var Horarios = require('./lib/horarios.js');
 var horarios = Horarios();
 var trenes = null;
+var readme = null;
 
 // refresh data every minute
 // FIXME:
@@ -16,8 +18,17 @@ setInterval (function () {
 	})
 }, 60000);
 
+// real dumb caching of README.md
 app.get('/', function(req, res){
-	res.send('Hello World');
+	if (! readme) {
+		fs.readFile(__dirname + '/README.md', 'UTF-8', function (err, data) {
+			if (err) throw err;
+			readme = data;
+			res.send (data);
+		});
+	} else {
+		res.send(readme);
+	}
 });
 
 app.get('/sarmiento/:from', function (req, res) {
