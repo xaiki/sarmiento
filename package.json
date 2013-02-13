@@ -1,0 +1,36 @@
+{
+  "name": "trenes-ba-api",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Sebastian Alvarez <seba.alvarez16@gmail.com>"
+  "description": "a simple REST Api to http://trenes.mininterior.gov.ar/arribos_sarmiento_.php",
+  "contributors": [ 
+    {
+      "name": "Niv Sardi",
+      "email": "xaiki@debian.org"
+    } 
+  ],
+  "main": "./lib/horarios",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talvarez/los-trenes-son-de-eva-y-peron"
+  },
+  "keywords": [
+    "trenes",
+    "api",
+    "sarmiento"
+  ],
+  "dependencies" : {
+    "request"  :  "*",
+    "express"  :  "3.x",
+  },
+  "analyze": false,
+  "devDependencies": {
+    "mocha"   :  "*",
+    "request" :  "2.1.x"
+  },
+  "license": "AGPL3",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
