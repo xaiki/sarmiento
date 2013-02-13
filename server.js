@@ -38,8 +38,8 @@ app.get('/', function(req, res){
 
 app.get('/sarmiento/:from', function (req, res) {
 	res.send({'MORENO': trenes.lista(req.params.from, 'MORENO'),
-		  'ONCE': trenes.lista(req.params.from, 'ONCE'),
-		 );
+		  'ONCE': trenes.lista(req.params.from, 'ONCE')
+		 });
 });
 
 app.get('/sarmiento/:from/:to', function (req, res) {
