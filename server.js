@@ -11,11 +11,16 @@ var readme = null;
 // this should have a cache that refreshes on new request topped at 1s
 // also, it should implement a promise so we can use it safely.
 
-setInterval (function () {
+function refresh () {
 	horarios.actualizar (function (data) {
 		console.log (new Date(), 'refresh');
 		trenes = data;
 	})
+};
+
+refresh();
+setInterval (function () {
+	refresh();
 }, 60000);
 
 // real dumb caching of README.md
