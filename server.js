@@ -46,4 +46,9 @@ app.get('/sarmiento/:from/:to', function (req, res) {
 	res.send(trenes.lista(req.params.from, req.params.to));
 });
 
-app.listen(3000);
+
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+
